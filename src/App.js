@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './components/ThemeContext';
+import LandingPage from './pages/LandingPage';
+import PermissionScreen from './pages/PermissionScreen';
+import Dashboard from './pages/Dashboard';
+import VibeMap from './pages/VibeMap';
+import Rewards from './pages/Rewards';
+import Settings from './pages/Settings';
+import SocialSyncPopup from './components/SocialSyncPopup';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/permissions" element={<PermissionScreen />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/vibe-map" element={<VibeMap />} />
+            <Route path="/rewards" element={<Rewards />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+          <SocialSyncPopup />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
