@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Pulse - Admin View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-title">
+                <h1>HostelPulse – Admin View</h1>
+                <p>Anonymous Pattern-Based Insights</p>
+            </div>
+            <div class="nav-icon">
+                <span>👤</span> <!-- Admin icon placeholder -->
+                <button id="settings-btn" class="settings-btn"><i class="fas fa-cog"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floor Overview Section -->
+    <section class="floor-overview">
+        <h2>Floor Overview</h2>
+        <div class="floor-grid" id="floor-grid">
+            <!-- Cards will be populated by JS -->
+        </div>
+    </section>
+
+    <!-- Insights Panel -->
+    <section class="insights-panel">
+        <h2>Insights</h2>
+        <div class="insights-content" id="insights-content">
+            <!-- Insights text will be populated by JS -->
+        </div>
+    </section>
+
+    <!-- Weekly Trend Section -->
+    <section class="weekly-trend">
+        <h2>Weekly Trends</h2>
+        <div class="chart-container">
+            <canvas id="stressChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="sleepChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Action Suggestions Section -->
+    <section class="action-suggestions">
+        <h2>Action Suggestions</h2>
+        <p class="suggestion-note">Suggestions – Not Enforcement</p>
+        <div class="suggestions-grid" id="suggestions-grid">
+            <!-- Suggestion cards will be populated by JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>All data shown is anonymous and aggregated. No individual tracking.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
